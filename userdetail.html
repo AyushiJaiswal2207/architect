@@ -1,0 +1,177 @@
+<html>
+<head>
+<title> FORM VALIDATION</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+		body{
+			background: url(bg.jpg) no-repeat center fixed;
+			background-size:cover;
+			 
+		}
+		#container{
+			height:500px;
+			width: 800px;
+			border-radius:2%;
+			border-color:blue;
+			padding:20px;
+
+			border: 3px solid white;
+			margin-left:500px;
+			font-size:200%;
+			text-align:justify;
+	
+		}
+		#t{
+			font-size:250%;
+			margin-left:150px;
+		}
+		input{
+			height:30px;
+			width:200px;
+			border-radius:5px;
+			border: 2px solid white;
+			
+
+		}
+		#sb{
+		margin-left:100px;
+		width:100px;
+		background-color:blue;
+		color:white;
+		margin-top:50px;
+		}
+</style>
+</head>
+
+<body>
+ <p id="t" ><b>REGISTER:</b></p>
+ <div id="container">
+<form>
+<label for="fname"> First Name:</label>
+<input type ="text" name="fname" id="fn" placeholder="user first name "><br>
+
+<label for="lname"> Last Name:</label>
+<input type ="text" name="lname" id="ln" placeholder="user last name"><br>
+
+<label for="lname"> Phone Number:</label>
+<input type ="text" name="phone" id="p" placeholder="user last name"><br>
+
+<label for="mail"> EmailId:</label>
+<input type ="text" name="mail" id="ml" placeholder="e.g:xyz@gmail.com"><br>
+
+<label for="password"> Password:</label>
+<input type ="password" name="password" id="pwd" ><br>
+
+<label for="cpassword"> Confirm Password:</label>
+<input type ="password" name="cpassword" id="pwdc" ><br>
+
+<input id="sb" type ="submit"  ><br>
+</form>
+</div>
+
+
+			<script type="text/javascript">
+					function isEmail(email)
+					{
+					  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+					  return regex.test(email);
+					}
+				
+				$("#sb").click(function() {
+				
+					var emsg="";
+					if( isEmail($("#ml").val())== false)
+					{
+						emsg+=" your email address is not valid";
+						}
+						
+							if($.isNumeric($("#p").val())==false)
+							{
+							
+									emsg+=" not a valid phone";
+								
+							}
+								if(  $("#pwd").val() != $("#pwdc").val()  )
+								{
+							
+									emsg+=" password doesn't matched ";
+								
+								}
+				
+				
+				if( $("#fn").val()=="")
+				{
+				alert("firstname Feild Is Empty !! RECHECK !!");
+				
+				
+				}
+				
+				 if($("#ln").val()=="")
+				 {
+				alert("last name  Feild Is Empty !! RECHECK !!");
+				
+				}
+				if( $("#p").val()=="")
+				{
+				alert("phone number Feild Is Empty !! RECHECK !!");
+				}
+				
+				if($("#pwd").val()=="")
+				 {
+				alert("password Feild Is Empty !! RECHECK !!");
+				}
+			
+				if($("#pwdc").val()=="")
+				{
+				alert("confirm password  Feild Is Empty !! RECHECK !!");
+				
+				
+				}
+				if( $("#ml").val() =="" )
+				{
+				alert("email Feild Is Empty !! RECHECK !!");
+				
+				
+				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				if(emsg==""){
+				alert("submmited!!");
+				}
+				else{
+				alert(emsg);
+				}
+				
+				});
+				
+			
+
+				
+				
+				
+				
+					
+					
+				
+				
+				
+				
+				
+				
+			
+
+
+
+			</script>
+
+
+</body>
+</html>
